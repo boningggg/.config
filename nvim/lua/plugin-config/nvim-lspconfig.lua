@@ -29,3 +29,13 @@ lspconfig.clangd.setup {
   capabilities = capabilities,
 }
 
+-- java, using jdtls as server
+lspconfig.jdtls.setup {
+  cmd = { "jdtls" },
+  on_attach = on_attach,
+  flags = {
+    -- This will be the default in neovim 0.7+
+    debounce_text_changes = 150,
+  },
+  capabilities = capabilities,
+}

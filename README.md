@@ -17,7 +17,7 @@
 
 ## Install some dependencies
 
-1. Alacritty
+### Alacritty
   
   ```bash
   brew tap homebrew/cask-fonts && brew install --cask font-go-mono-nerd-font
@@ -25,7 +25,7 @@
   brew tap homebrew/cask-fonts && brew install --cask font-hack-nerd-font
   ```
 
-2. zsh
+### zsh
   
   ```bash
   brew install pure
@@ -33,7 +33,7 @@
   brew install zsh-syntax-highlighting
   cp ~/.config/zsh/.zshrc ~/
   ```
-3. NeoVim
+### NeoVim
   
   ```bash
   git clone --depth 1 https://github.com/wbthomason/packer.nvim\
@@ -41,6 +41,9 @@
 
   brew install ripgrep
   brew install fd
+  brew install llvm # need lldb-vscode for c language
+  brew install openjdk@11 # java11
+  brew install jdtls # need for java language server protocol
   ```
 
   Then `nvim ~/.config/nvim/lua/plugins.lua` and `:w` (using packer) to install plugins.
