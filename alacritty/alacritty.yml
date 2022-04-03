@@ -17,10 +17,9 @@ window:
 
 font:
   normal:
-    # GoMono Nerd Font (Mono)
-    # Hack Nerd Font (Mono)
-    # FiraCode Nerd Font (Mono)
-    # CaskaydiaCove Nerd Font (Mono)
+    # brew tap homebrew/cask-fonts && brew install --cask font-go-mono-nerd-font
+    # brew tap homebrew/cask-fonts && brew install --cask font-fira-code-nerd-font
+    # brew tap homebrew/cask-fonts && brew install --cask font-hack-nerd-font
     family: FiraCode Nerd Font Mono
   size: 16.0
   offset:
