@@ -1,0 +1,1 @@
+Basic alacritty config

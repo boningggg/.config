@@ -1,0 +1,65 @@
+env:
+  TERM: alacritty
+
+window:
+  # Spread additional padding evenly around the terminal content.
+  dynamic_padding: true
+  # Window decorations
+  #
+  # Values for `decorations`:
+  #     - full: Borders and title bar
+  #     - none: Neither borders nor title bar
+  #
+  # Values for `decorations` (macOS only):
+  #     - transparent: Title bar, transparent background and title bar buttons
+  #     - buttonless: Title bar, transparent background and no title bar buttons
+  decorations: transparent
+
+font:
+  normal:
+    # GoMono Nerd Font (Mono)
+    # Hack Nerd Font (Mono)
+    # FiraCode Nerd Font (Mono)
+    # CaskaydiaCove Nerd Font (Mono)
+    family: FiraCode Nerd Font Mono
+  size: 16.0
+  offset:
+    x: 0
+    y: 8 # Line spacing
+  glyph_offset:
+    x: 0
+    y: 4 # Make this value half of offset.y to ensure the character in the middle of line.
+
+# onedarkpro.nvim - onedark - from https://github.com/olimorris/onedarkpro.nvim/blob/main/extras/alacritty_onedark.yml
+colors:
+  primary:
+    background: "#282c34"
+    foreground: "#abb2bf"
+
+  normal:
+    black: "#282c34"
+    red: "#e06c75"
+    green: "#98c379"
+    yellow: "#e5c07b"
+    blue: "#61afef"
+    magenta: "#c678dd"
+    cyan: "#56b6c2"
+    white: "#abb2bf"
+
+  bright:
+    black: "#3f3f3f"
+    red: "#e06c75"
+    green: "#98c379"
+    yellow: "#e5c07b"
+    blue: "#61afef"
+    magenta: "#c678dd"
+    cyan: "#56b6c2"
+    white: "#bfc5ce"
+
+  cursor:
+    text: CellBackground
+    cursor: CellForeground # syntax-cursor-color
+
+  selection:
+    text: CellForeground
+    background: "#3e4452"
