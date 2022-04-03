@@ -43,6 +43,8 @@
   brew install fd
   brew install llvm # need lldb-vscode for c language
   brew install openjdk@11 # java11
+  # For the system Java wrappers to find this JDK, symlink it with
+  sudo ln -sfn /usr/local/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk
   brew install jdtls # need for java language server protocol
   ```
 
