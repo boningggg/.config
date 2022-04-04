@@ -44,8 +44,9 @@ packer.startup({
           requires = "nvim-lua/plenary.nvim" }
 
     -- Language Server Protocol
-    use { "neovim/nvim-lspconfig",
-          config = function() require("plugin-config.nvim-lspconfig") end }
+    use { "neovim/nvim-lspconfig" }
+    use { "williamboman/nvim-lsp-installer",
+          config = function() require("plugin-config.nvim-lsp-installer") end}
 
     -- Completion
     use { "hrsh7th/nvim-cmp",
