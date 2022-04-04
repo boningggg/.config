@@ -1,4 +1,3 @@
--- Include the servers you want to have installed by default below
 local servers = {
   clangd = require("lsp.clangd"), -- for C
   jdtls = require("lsp.jdtls"), -- for Java
