@@ -192,20 +192,17 @@ use { "nvim-telescope/telescope.nvim",
 
 [neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) - Quickstart configurations for the Neovim LSP client.
 
-1. Install language server
-
-   [server_configurations.md](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md)
-
-   For C, using clangd. For Mac user, `xcode-select --install` has already installed `clangd` for you, check `which clangd`
-
-2. Installation
+1. Installation
 
 ```lua
-use { "neovim/nvim-lspconfig",
-			config = function() require("plugin-config.nvim-lspconfig") end }
+use { "neovim/nvim-lspconfig" }
+use { "williamboman/nvim-lsp-installer",
+      config = function() require("plugin-config.nvim-lsp-installer") end}
 ```
 
-3. Write configuration `nvim-lspconfig.lua`
+2. Write configuration `nvim-lspconfig.lua` and `nvim-lsp-installer.lua`
+
+3. Write configuration for each language e.g. `lsp.jdtls` and `clangd`
 
 4. Write the key-mappings of this plugin in `keymappings.lua`
 
