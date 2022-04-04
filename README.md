@@ -12,7 +12,7 @@
   git init
   git remote add origin https://github.com/boningggg/.config.git
   git fetch
-  git checkout -t origin/master
+  git checkout -t origin/main
   ```
 
 ## Install some dependencies
