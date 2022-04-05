@@ -16,7 +16,7 @@ vim.g.neoformat_java_clangformat = {
     "-assume-filename=" .. vim.fn.expand("%:t"),
     "-style='{BasedOnStyle: LLVM, \
               IndentWidth: 4, \
-              AlignConsecutiveDeclarations: true}'"
+              AlignConsecutiveAssignments: true}'"
   },
   stdin = 1
 }
