@@ -55,11 +55,13 @@ local nvim_tree_keymapping = {
 }
 
 ---------- Bufferline ----------
-map("n", "<Space>b[", ":BufferLineCyclePrev<CR>", opt)
-map("n", "<Space>b]", ":BufferLineCycleNext<CR>", opt)
-map("n", "<Space>bq", ":bdelete<CR>", opt)
-map("n", "<Space>bcl", ":BufferLineCloseRight<CR>", opt)
-map("n", "<Space>bch", ":BufferLineCloseLeft<CR>", opt)
+map("n", "<Space>bh", "<cmd>BufferLineCyclePrev<CR>", opt)
+map("n", "<Space>bl", "<cmd>BufferLineCycleNext<CR>", opt)
+map("n", "<Space>bmh", "<cmd>BufferLineMovePrev<CR>", opt)
+map("n", "<Space>bml", "<cmd>BufferLineMoveNext<CR>", opt)
+map("n", "<Space>bq", "<cmd>bdelete<CR>", opt)
+map("n", "<Space>bch", "<cmd>BufferLineCloseLeft<CR>", opt)
+map("n", "<Space>bcl", "<cmd>BufferLineCloseRight<CR>", opt)
 
 ---------- highlight-current-n ----------
 map("n", "n", "<Plug>(highlight-current-n-n)", { noremap = false, silent = true })
