@@ -37,14 +37,7 @@
   
   ```bash
   git clone --depth 1 https://github.com/wbthomason/packer.nvim\
-~/.local/share/nvim/site/pack/packer/start/packer.nvim
-
-brew install ripgrep
-brew install fd
-brew install llvm # need lldb-vscode for c language
-brew install openjdk@11 # java11
-# For the system Java wrappers to find this JDK, symlink it with
-sudo ln -sfn /usr/local/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk
+  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
   brew install ripgrep
   brew install fd
@@ -52,6 +45,7 @@ sudo ln -sfn /usr/local/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/JavaVir
   brew install openjdk@11 # java11
   # For the system Java wrappers to find this JDK, symlink it with
   sudo ln -sfn /usr/local/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk
+  brew install clang-format
   ```
 
   Then `nvim ~/.config/nvim/lua/plugins.lua` and `:w` (using packer) to install plugins.
