@@ -14,9 +14,14 @@ vim.g.neoformat_java_clangformat = {
   exe = "clang-format",
   args = {
     "-assume-filename=" .. vim.fn.expand("%:t"),
-    "-style='{BasedOnStyle: LLVM, \
+    "-style='{ \
+              BasedOnStyle: LLVM, \
               IndentWidth: 4, \
-              AlignConsecutiveAssignments: true}'"
+              ColumnLimit: 0, \
+              AlignAfterOpenBracket: Align, \
+              AlignConsecutiveDeclarations: true, \
+              AlignConsecutiveAssignments: true, \
+              }'"
   },
   stdin = 1
 }

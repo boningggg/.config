@@ -15,7 +15,6 @@ onedarkpro.setup({
         end
     end,
     colors = {
-      cursorline = "#5d6c75"
     }, -- Override default colors
     hlgroups = {}, -- Override default highlight groups
     filetype_hlgroups = {}, -- Override default highlight groups for specific filetypes
