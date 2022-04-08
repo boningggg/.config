@@ -32,25 +32,13 @@ Some other plugins may helpful but not necessary for me.
 ~/.config/nvim
 ├── README.md
 ├── ftplugin
-│   ├── c.lua
-│   └── lua.lua
+│   └── xxx.lua
 ├── init.lua
 ├── lua
 │   ├── basic.lua
 │   ├── keymappings.lua
 │   ├── plugin-config
-│   │   ├── bufferline.lua
-│   │   ├── highlight-current-n.lua
-│   │   ├── lualine.lua
-│   │   ├── neoformat.lua
-│   │   ├── nvim-cmp.lua
-│   │   ├── nvim-dap-ui.lua
-│   │   ├── nvim-dap.lua
-│   │   ├── nvim-lspconfig.lua
-│   │   ├── nvim-tree.lua
-│   │   ├── nvim-treesitter.lua
-│   │   ├── onedarkpro.lua
-│   │   └── toggleterm.lua
+│   │   └── xxx.lua
 │   └── plugins.lua
 └── plugin
     └── packer_compiled.lua
@@ -297,17 +285,12 @@ So I have to customise the indent style separately.
 
 2. Customise different indent style file for different file type. e.g. `lua.lua`
 
-   ```lua
-   vim.bo.shiftwidth = 4
-   vim.bo.softtabstop = 4
-   ```
-
 3. Done, the neovim will automatically load this file when you are editing *.lua.
 
 ## Format
 
 [mhartington/formatter.nvim](https://github.com/mhartington/formatter.nvim) - A format runner for neovim, written in lua.
-1. `brew install clang-format`
+1. `brew install clang-format` and `brew install stylua`
 
 2. Installation
 
