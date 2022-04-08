@@ -5,7 +5,7 @@ if not ok_toggleterm then
   return
 end
 
-toggleterm.setup{
+toggleterm.setup({
   -- size can be a number or function which is passed the current terminal
   size = 30,
   hide_numbers = true, -- hide the number column in toggleterm buffers
@@ -22,11 +22,11 @@ toggleterm.setup{
     -- see :h nvim_open_win for details on borders however
     -- the 'curved' border is a custom border type
     -- not natively supported but implemented in this plugin.
-    border = 'single',
+    border = "single",
     winblend = 3,
     highlights = {
       border = "Normal",
       background = "Normal",
-    }
-  }
-}
+    },
+  },
+})

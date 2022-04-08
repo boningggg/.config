@@ -6,7 +6,7 @@ if not ok_highlight_current_n then
 end
 
 highlight_current_n.setup({
-  highlight_group = "IncSearch"
+  highlight_group = "IncSearch",
 })
 
 vim.cmd([[

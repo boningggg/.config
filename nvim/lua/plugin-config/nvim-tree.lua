@@ -7,7 +7,7 @@ end
 
 local nvim_tree_keymapping = require("keymappings").nvim_tree_keymapping
 
-nvim_tree.setup ({
+nvim_tree.setup({
   auto_reload_on_write = true,
   disable_netrw = false,
   hide_root_folder = false,
@@ -78,7 +78,14 @@ nvim_tree.setup ({
         enable = true,
         chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
         exclude = {
-          filetype = { "notify", "packer", "qf", "diff", "fugitive", "fugitiveblame" },
+          filetype = {
+            "notify",
+            "packer",
+            "qf",
+            "diff",
+            "fugitive",
+            "fugitiveblame",
+          },
           buftype = { "nofile", "terminal", "help" },
         },
       },

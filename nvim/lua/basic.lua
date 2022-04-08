@@ -21,7 +21,7 @@ vim.o.ignorecase = true
 vim.o.mouse = "a"
 -- Time in milliseconds to wait for a mapped sequence to complete
 vim.o.timeoutlen = 500
--- List mode: By default, show tabs as ">", trailing spaces as "-", and non-breakable space characters as "+". 
+-- List mode: By default, show tabs as ">", trailing spaces as "-", and non-breakable space characters as "+".
 vim.o.list = true
 vim.o.listchars = "tab:→ ,eol:↲,nbsp:␣,trail:•,extends:❯,precedes:❮"
 vim.o.showbreak = "↪"

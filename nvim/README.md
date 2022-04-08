@@ -298,29 +298,25 @@ So I have to customise the indent style separately.
 2. Customise different indent style file for different file type. e.g. `lua.lua`
 
    ```lua
-   vim.bo.expandtab = true                     
-   vim.bo.shiftwidth = 2
-   vim.bo.softtabstop = 2
-   -- Disable auto-comment after enter <CR> key or o key
-   vim.opt_local.formatoptions = vim.opt_local.formatoptions - {"c", "r", "o"}
+   vim.bo.shiftwidth = 4
+   vim.bo.softtabstop = 4
    ```
 
 3. Done, the neovim will automatically load this file when you are editing *.lua.
 
 ## Format
 
-[sbdchd/neoformat](https://github.com/sbdchd/neoformat) - A (Neo)vim plugin for formatting code.
-
+[mhartington/formatter.nvim](https://github.com/mhartington/formatter.nvim) - A format runner for neovim, written in lua.
 1. `brew install clang-format`
 
 2. Installation
 
 ```lua
-use { "sbdchd/neoformat",
-      config = function()  require("plugin-config.neoformat") end}
+use { "mhartington/formatter.nvim",
+      config = function()  require("plugin-config.formatter") end}
 ```
 
-3. Write configuration `neoformat.lua`
+3. Write configuration `formatter.lua`
 
 4. Write the key-mappings of this plugin in `keymappings.lua`
 

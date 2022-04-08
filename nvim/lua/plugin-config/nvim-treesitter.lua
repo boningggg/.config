@@ -5,7 +5,7 @@ if not ok_treesitter then
   return
 end
 
-treesitter.setup {
+treesitter.setup({
   -- One of "all", "maintained" (parsers with maintainers), or a list of languages
   ensure_installed = "maintained",
 
@@ -17,4 +17,4 @@ treesitter.setup {
     enable = true,
     additional_vim_regex_highlighting = false,
   },
-}
+})

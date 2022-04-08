@@ -6,15 +6,14 @@ if not ok_dap then
 end
 
 -- customize the signs
-vim.fn.sign_define('DapBreakpoint', {text='🔴', texthl='', linehl='', numhl=''})
-vim.fn.sign_define('DapStopped', {text='👉', texthl='', linehl='', numhl=''})
+vim.fn.sign_define("DapBreakpoint", { text = "🔴", texthl = "", linehl = "", numhl = "" })
+vim.fn.sign_define("DapStopped", { text = "👉", texthl = "", linehl = "", numhl = "" })
 
 dap.adapters.lldb = {
-  type = 'executable',
-  command = '/usr/local/Cellar/llvm/13.0.1_1/bin/lldb-vscode', -- adjust as needed
-  name = "lldb"
+  type = "executable",
+  command = "/usr/local/Cellar/llvm/13.0.1_1/bin/lldb-vscode", -- adjust as needed
+  name = "lldb",
 }
-
 
 dap.configurations.cpp = {
   {
@@ -22,9 +21,9 @@ dap.configurations.cpp = {
     type = "lldb",
     request = "launch",
     program = function()
-      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+      return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
     end,
-    cwd = '${workspaceFolder}',
+    cwd = "${workspaceFolder}",
     stopOnEntry = false,
     args = {},
 
@@ -51,10 +50,7 @@ dap.configurations.cpp = {
   },
 }
 
-
 -- If you want to use this for rust and c, add something like this:
 
 dap.configurations.c = dap.configurations.cpp
 dap.configurations.rust = dap.configurations.cpp
-
-

@@ -7,23 +7,21 @@ local servers = {
 for name, opts in pairs(servers) do
   opts.on_attach = require("keymappings").lsp_keymapping
   opts.flags = {
-      -- This will be the default in neovim 0.7+
-      debounce_text_changes = 150,
+    -- This will be the default in neovim 0.7+
+    debounce_text_changes = 150,
   }
   opts.capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
-  require('lspconfig')[name].setup(opts)
+  require("lspconfig")[name].setup(opts)
 end
 
 ---------- Lsp Floating Window Config ----------
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-  vim.lsp.handlers.hover, { border = "rounded" }
-)
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
 
-local signs = { 
-  DiagnosticSignError = "", 
-  DiagnosticSignWarn = "", 
-  DiagnosticSignHint = "", 
-  DiagnosticSignInfo = "" 
+local signs = {
+  DiagnosticSignError = "",
+  DiagnosticSignWarn = "",
+  DiagnosticSignHint = "",
+  DiagnosticSignInfo = "",
 }
 
 for hl, icon in pairs(signs) do
@@ -37,6 +35,6 @@ vim.diagnostic.config({
   severity_sort = true,
   float = {
     header = "",
-    border = "rounded"
-  }
+    border = "rounded",
+  },
 })

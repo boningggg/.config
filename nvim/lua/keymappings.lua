@@ -19,42 +19,41 @@ map("n", "<Space>wx", "<C-w>x", opt) -- Move the current window next
 map("n", "<Space>wH", "<C-w>H", opt) -- Move the current window far left
 map("n", "<Space>wL", "<C-w>L", opt) -- Move the current window far right
 
-
 ---------- Nvim Tree --------
 -- Toggle file explorer
 map("n", "<Space>ft", ":NvimTreeToggle<CR>", opt)
 -- Export this keymapping table to /plugin-config/nvim-tree.lua
 local nvim_tree_keymapping = {
-  { key = "g?",		action = "toggle_help" },
-  { key = "q",		action = "close" },
+  { key = "g?", action = "toggle_help" },
+  { key = "q", action = "close" },
   -- Move
-  { key = "h",		action = "parent_node" },
-  { key = "l",		action = "cd" },
+  { key = "h", action = "parent_node" },
+  { key = "l", action = "cd" },
   -- Operate file
-  { key = "o",		action = "edit" },
-  { key = "a",		action = "create" }, -- to add a direcoty end with /
-  { key = "r",		action = "rename" },
-  { key = "d",		action = "remove" },
-  { key = "c",		action = "copy" },
-  { key = "p",		action = "paste" },
-  { key = "x",		action = "cut" },
+  { key = "o", action = "edit" },
+  { key = "a", action = "create" }, -- to add a direcoty end with /
+  { key = "r", action = "rename" },
+  { key = "d", action = "remove" },
+  { key = "c", action = "copy" },
+  { key = "p", action = "paste" },
+  { key = "x", action = "cut" },
   -- Refresh
-  { key = "<C-r>",	action = "refresh" },
+  { key = "<C-r>", action = "refresh" },
   -- Split
-  { key = "sg",		action = "split" },
-  { key = "sv",		action = "vsplit" },
+  { key = "sg", action = "split" },
+  { key = "sv", action = "vsplit" },
   -- Hidden file
-  { key = ".",		action = "toggle_dotfiles" },
-  { key = "I",		action = "toggle_git_ignored" },
+  { key = ".", action = "toggle_dotfiles" },
+  { key = "I", action = "toggle_git_ignored" },
   -- File info
-  { key = "y",		action = "copy_name" },
-  { key = "Y",		action = "copy_path" },
-  { key = "gy",		action = "copy_absolute_path" },
+  { key = "y", action = "copy_name" },
+  { key = "Y", action = "copy_path" },
+  { key = "gy", action = "copy_absolute_path" },
   -- Collapse_all
-  { key = "W",		action = "collapse_all" },
+  { key = "W", action = "collapse_all" },
 }
 
----------- Bufferline ----------
+---------- Tabline ----------
 map("n", "<Space>bh", "<cmd>BufferLineCyclePrev<CR>", opt)
 map("n", "<Space>bl", "<cmd>BufferLineCycleNext<CR>", opt)
 map("n", "<Space>bmh", "<cmd>BufferLineMovePrev<CR>", opt)
@@ -67,11 +66,9 @@ map("n", "<Space>bcl", "<cmd>BufferLineCloseRight<CR>", opt)
 map("n", "n", "<Plug>(highlight-current-n-n)", { noremap = false, silent = true })
 map("n", "N", "<Plug>(highlight-current-n-N)", { noremap = false, silent = true })
 
-
 ---------- Telescope ----------
 map("n", "<Space>sf", "<cmd>Telescope find_files<CR>", opt)
 map("n", "<Space>sg", "<cmd>Telescope live_grep<CR>", opt)
-
 
 ---------- Lsp ----------
 map("n", "<Space>le", "<cmd>lua vim.diagnostic.open_float()<CR>", opt)
@@ -93,13 +90,13 @@ end
 ---------- Nvim Completion ----------
 local nvim_cmp = function(cmp, luasnip)
   return {
-    ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
-    ['<C-e>'] = cmp.mapping({
+    ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
+    ["<C-e>"] = cmp.mapping({
       i = cmp.mapping.abort(),
       c = cmp.mapping.close(),
     }),
-    ['<CR>'] = cmp.mapping.confirm({ select = false }),
-    ['<Tab>'] = function(fallback)
+    ["<CR>"] = cmp.mapping.confirm({ select = false }),
+    ["<Tab>"] = function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
       elseif luasnip.expand_or_jumpable() then
@@ -108,7 +105,7 @@ local nvim_cmp = function(cmp, luasnip)
         fallback()
       end
     end,
-    ['<S-Tab>'] = function(fallback)
+    ["<S-Tab>"] = function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
       elseif luasnip.jumpable(-1) then
@@ -133,20 +130,20 @@ map("n", "<F10>", "<cmd>lua require'dap'.step_over()<CR>", opt)
 map("n", "<F11>", "<cmd>lua require'dap'.step_into()<CR>", opt)
 map("n", "<S-F11>", "<cmd>lua require'dap'.step_out()<CR>", opt)
 map("n", "<F6>", "<cmd>lua require'dap'.run_last()<CR>", opt)
-map("n",
-    "<F12>",
-    "<cmd>lua require'dap'.close()<CR>\
-    <cmd>lua require'dap.repl'.close()<CR>\
-    <cmd>lua require'dapui'.close()<CR>\
-    <cmd>DapVirtualTextForceRefresh<CR>", opt)
+map(
+  "n",
+  "<F12>",
+  "<cmd>lua require'dap'.close()<CR><cmd>lua require'dap.repl'.close()<CR><cmd>lua require'dapui'.close()<CR><cmd>DapVirtualTextForceRefresh<CR>",
+  opt
+)
 
----------- Neoformat ----------
-map("n", "<Space>ff", "<cmd>Neoformat<CR>", opt)
+---------- Format ----------
+map("n", "<Space>ff", "<cmd>Format<CR>", opt)
 
 -- Module: keymappings
 keymappings = {
   nvim_tree_keymapping = nvim_tree_keymapping,
   lsp_keymapping = lsp_keymapping,
-  nvim_cmp = nvim_cmp
+  nvim_cmp = nvim_cmp,
 }
 return keymappings

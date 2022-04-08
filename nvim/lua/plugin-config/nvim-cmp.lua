@@ -23,45 +23,44 @@ cmp.setup({
   mapping = require("keymappings").nvim_cmp(cmp, luasnip),
   snippet = {
     -- REQUIRED - you must specify a snippet engine
-    expand = function(args) luasnip.lsp_expand(args.body) end,
+    expand = function(args)
+      luasnip.lsp_expand(args.body)
+    end,
   },
-  sources = cmp.config.sources(
-    {
-      { name = "nvim_lsp" },
-      { name = "luasnip" },
-    },
-    {
-      { name = "buffer" },
-      { name = "path" },
-      { name = "cmdline" }
-    }
-  ),
+  sources = cmp.config.sources({
+    { name = "nvim_lsp" },
+    { name = "luasnip" },
+  }, {
+    { name = "buffer" },
+    { name = "path" },
+    { name = "cmdline" },
+  }),
   sorting = {
-        comparators = {
-            cmp.config.compare.offset,
-            cmp.config.compare.exact,
-            cmp.config.compare.score,
-            cmp_under_comparator.under,
-            cmp.config.compare.kind,
-            cmp.config.compare.sort_text,
-            cmp.config.compare.length,
-            cmp.config.compare.order,
-        },
+    comparators = {
+      cmp.config.compare.offset,
+      cmp.config.compare.exact,
+      cmp.config.compare.score,
+      cmp_under_comparator.under,
+      cmp.config.compare.kind,
+      cmp.config.compare.sort_text,
+      cmp.config.compare.length,
+      cmp.config.compare.order,
+    },
   },
-  })
+})
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline("/", {
   sources = {
-    { name = "buffer" }
-  }
+    { name = "buffer" },
+  },
 })
 
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline(":", {
   sources = cmp.config.sources({
-    { name = "path" }
+    { name = "path" },
   }, {
-    { name = "cmdline" }
-  })
+    { name = "cmdline" },
+  }),
 })
