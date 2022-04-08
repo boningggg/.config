@@ -18,13 +18,13 @@ The basic features I need:
 - [x] Debug
 - [x] Custom indent for file type
 - [x] Format
+- [x] Keymappings Prompt
 
 Some other plugins may helpful but not necessary for me.
 
 - AutoSave
 - lastplace
 - undo tree
-- which-key
 
 ## Folder structure
 
@@ -303,3 +303,17 @@ use { "mhartington/formatter.nvim",
 
 4. Write the key-mappings of this plugin in `keymappings.lua`
 
+## Keymappings Prompt
+
+[folke/which-key.nvim](https://github.com/folke/which-key.nvim) - WhichKey is a lua plugin for Neovim 0.5 that displays a popup with possible key bindings of the command you started typing.
+
+1. Installation
+
+```lua
+use {
+  "folke/which-key.nvim",
+  config = function() require("plugin-config.which-key") end
+}
+```
+
+2. Write configuration `which-key.lua`

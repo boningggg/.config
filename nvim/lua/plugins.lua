@@ -134,6 +134,14 @@ packer.startup({
         require("plugin-config.formatter")
       end,
     })
+
+    -- Which Key
+    use({
+      "folke/which-key.nvim",
+      config = function()
+        require("plugin-config.which-key")
+      end,
+    })
   end, -- End adding plugins
 
   -- Using a floating window

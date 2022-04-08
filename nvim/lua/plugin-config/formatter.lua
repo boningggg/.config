@@ -22,7 +22,7 @@ require("formatter").setup({
         return {
           exe = "stylua",
           args = {
-            "--config-path " .. vim.fn.expand("%:p:h") .. "/stylua.toml",
+            "--config-path " .. vim.fn.getenv("HOME") .. "/.config/nvim/lua/plugin-config/stylua.toml",
             "-",
           },
           stdin = true,
