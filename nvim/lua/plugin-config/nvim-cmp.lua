@@ -1,39 +1,18 @@
-local ok_cmp, cmp = pcall(require, "cmp")
-
-if not ok_cmp then
-  vim.notify("[ERROR] Don't find the plugin 'nvim-cmp', please check 'plugins.lua'.")
-  return
-end
-
-local ok_luasnip, luasnip = pcall(require, "luasnip")
-
-if not ok_luasnip then
-  vim.notify("[ERROR] Don't find the plugin 'luasnip', please check 'plugins.lua'.")
-  return
-end
-
-local ok_cmp_under_comparator, cmp_under_comparator = pcall(require, "cmp-under-comparator")
-
-if not ok_cmp_under_comparator then
-  vim.notify("[ERROR] Don't find the plugin 'cmp-under-comparator', please check 'plugins.lua'.")
-  return
-end
+local cmp = require("cmp")
+local cmp_under_comparator = require("cmp-under-comparator")
 
 cmp.setup({
-  mapping = require("keymappings").nvim_cmp(cmp, luasnip),
+  mapping = require("keymappings").nvim_cmp(cmp),
   snippet = {
-    -- REQUIRED - you must specify a snippet engine
     expand = function(args)
-      luasnip.lsp_expand(args.body)
+      vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
     end,
   },
   sources = cmp.config.sources({
     { name = "nvim_lsp" },
-    { name = "luasnip" },
+    { name = "vsnip" },
   }, {
     { name = "buffer" },
-    { name = "path" },
-    { name = "cmdline" },
   }),
   sorting = {
     comparators = {
