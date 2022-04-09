@@ -87,10 +87,11 @@ packer.startup({
         "hrsh7th/cmp-buffer", -- nvim-cmp source for buffer words
         "hrsh7th/cmp-path", -- nvim-cmp source for filesystem paths
         "hrsh7th/cmp-cmdline", -- nvim-cmp source for vim's cmdline
+        "hrsh7th/cmp-nvim-lsp-signature-help", --nvim-cmp source for displaying function signature
         -- Snippet
         "hrsh7th/vim-vsnip", -- Snippet engine
         "hrsh7th/cmp-vsnip", -- Snip completion source
-        -- "rafamadriz/friendly-snippets", -- Set of preconfigured snippets for different languages
+        "rafamadriz/friendly-snippets", -- Set of preconfigured snippets for different languages
         -- Better sort completion items
         "lukas-reineke/cmp-under-comparator",
       },
