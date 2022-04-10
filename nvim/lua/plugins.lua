@@ -144,6 +144,14 @@ packer.startup({
         require("plugin-config.which-key")
       end,
     })
+
+    -- Comment
+    use({
+      "numToStr/Comment.nvim",
+      config = function()
+        require("plugin-config.comment")
+      end,
+    })
   end, -- End adding plugins
 
   -- Using a floating window

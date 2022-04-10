@@ -151,10 +151,27 @@ map(
 ---------- Format ----------
 map("n", "<Space>ff", "<cmd>Format<CR>", opt)
 
+---------- Comment ----------
+local comment = {
+  toggler = {
+    ---Line-comment toggle keymap
+    line = "<Space>clc",
+    ---Block-comment toggle keymap
+    block = "<Space>cbc",
+  },
+  opleader = {
+    ---Line-comment keymap
+    line = "<Space>cl",
+    ---Block-comment keymap
+    block = "<Space>cb",
+  },
+}
+
 -- Module: keymappings
 keymappings = {
   nvim_tree_keymapping = nvim_tree_keymapping,
   lsp_keymapping = lsp_keymapping,
   nvim_cmp = nvim_cmp,
+  comment = comment,
 }
 return keymappings
