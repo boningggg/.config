@@ -7,8 +7,6 @@ vim.o.number = true
 vim.o.relativenumber = true
 -- Highlight cursor line
 vim.o.cursorline = true
--- The cursor line always be in the middle
-vim.o.scrolloff = 999
 -- Not wrap line
 vim.o.wrap = false
 -- Show (partial) command in the last line of the screen.
