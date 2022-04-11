@@ -1,5 +1,22 @@
 require("formatter").setup({
   filetype = {
+    c = {
+      function()
+        return {
+          exe = "clang-format",
+          args = {
+            "--assume-filename=" .. vim.fn.expand("%:t"),
+            "-style='{\
+              BasedOnStyle: LLVM, \
+              IndentWidth: 8, \
+              IncludeBlocks: Regroup, \
+              AlignConsecutiveDeclarations: true, \
+              AlignConsecutiveAssignments: true}'",
+          },
+          stdin = true,
+        }
+      end,
+    },
     java = {
       function()
         return {
