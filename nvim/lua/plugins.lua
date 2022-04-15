@@ -158,10 +158,9 @@ packer.startup({
   config = { display = { open_fn = require("packer.util").float } },
 })
 
--- Automatically run PackerSync.
-vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end
-]])
+local groupId = vim.api.nvim_create_augroup("packer_user_config", {})
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+  group = groupId,
+  pattern = "plugins.lua",
+  command = "source <afile> | PackerSync",
+})
