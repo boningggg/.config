@@ -1,7 +1,8 @@
-local ok_bufferline, bufferline = pcall(require, "bufferline")
+local ok, bufferline = pcall(require, "bufferline")
 
-if not ok_bufferline then
-  vim.notify("[ERROR] Don't find the plugin 'bufferline', please check 'plugins.lua'.")
+
+if not ok then
+  vim.notify("[ERROR] Don't find the plugin bufferline.")
   return
 end
 
@@ -11,7 +12,6 @@ bufferline.setup({
     close_command = "bdelete! %d",
     right_mouse_command = "bdelete! %d",
     left_mouse_command = "buffer %d",
-    indicator_icon = "▎",
     buffer_close_icon = "",
     modified_icon = "●",
     close_icon = "",

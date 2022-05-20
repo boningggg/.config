@@ -5,26 +5,20 @@ Basic config with some necessary plugins.
 The basic features I need:
 
 - [x] Plugin Manager
-- [x] Colorscheme
 - [x] Syntax highlighting
+- [x] Colorscheme
 - [x] File explorer
 - [x] Tabline
 - [x] Statusline
 - [x] Search
 - [x] Fuzzy Finder
-- [x] Language Server Protocol
-- [x] Completion
 - [x] Terminal Integration
-- [x] Debug
 - [x] Custom indent for file type
 - [x] Format
 - [x] Keymappings Prompt
-
-Some other plugins may helpful but not necessary for me.
-
-- AutoSave
-- lastplace
-- undo tree
+- [x] Language Server Protocol
+- [x] Completion
+- [x] Debug
 
 ## Folder structure
 
@@ -61,32 +55,25 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 
 4. `:w` to `:PackerSync`
 
-## Colorscheme
-
-[olimorris/onedarkpro.nvim](https://github.com/olimorris/onedarkpro.nvim) - OneDarkPro theme for Neovim. Completely customisable colors, styles and highlights. Written in Lua.
-
-1. Installation
-
-```lua
-use { "olimorris/onedarkpro.nvim", 
-      config = function() require("plugin-config.onedarkpro") end }
-```
-
-2. Write configuration of this scheme in `onedarkpro.lua`
-
 ## Syntax highlighting
 
 [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) - The goal of `nvim-treesitter` is both to provide a simple and easy way to use the interface for [tree-sitter](https://github.com/tree-sitter/tree-sitter) in Neovim and to provide some basic functionality such as highlighting based on it.
 
 1. Installation
 
-```lua
-use { "nvim-treesitter/nvim-treesitter", 
-      run = ":TSUpdate",
-      config = function() require("plugin-config.nvim-treesitter") end}
-```
+​	See `plugins.lua`
 
 2. Write configuration `nvim-treesitter.lua`
+
+## Colorscheme
+
+[olimorris/onedarkpro.nvim](https://github.com/olimorris/onedarkpro.nvim) - OneDarkPro theme for Neovim. Completely customisable colors, styles and highlights. Written in Lua.
+
+1. Installation
+
+   See `plugins.lua`
+
+2. Write configuration of this scheme in `onedarkpro.lua`
 
 ## File explorer
 
@@ -100,11 +87,7 @@ Install your favorite font following this [nerd_fonts.sh](https://gist.github.co
 
 1. Installation
 
-```lua
-use { "kyazdani42/nvim-tree.lua", 
-      requires = "kyazdani42/nvim-web-devicons",
-      config = function() require("plugin-config.nvim-tree") end}
-```
+   See `plugins.lua`
 
 2. Write configuration `nvim-tree.lua`
 
@@ -116,11 +99,7 @@ use { "kyazdani42/nvim-tree.lua",
 
 1. Installation
 
-```lua
-use {"akinsho/bufferline.nvim", 
-      requires = "kyazdani42/nvim-web-devicons",
-      config = function() require("plugin-config.bufferline") end}
-```
+   See `plugins.lua`
 
 2. Write configuration `bufferline.lua`
 
@@ -134,11 +113,7 @@ use {"akinsho/bufferline.nvim",
 
 1. Installation
 
-```lua
-use { "nvim-lualine/lualine.nvim", 
-      requires = "kyazdani42/nvim-web-devicons",
-      config = function() require("plugin-config.lualine") end}
-```
+   See `plugins.lua`
 
 2. Write configuration `lualine.lua`
 
@@ -148,10 +123,7 @@ use { "nvim-lualine/lualine.nvim",
 
 1. Installation
 
-```lua
-use { "rktjmp/highlight-current-n.nvim",
-			config = function() require("plugin-config.highlight-current-n") end }
-```
+   See `plugins.lua`
 
 2. Write configuration `highlight-current-n.lua`
 3. Write the key-mappings of this plugin in `keymappings.lua`
@@ -169,57 +141,9 @@ Use `brew` to install them.
 
 1. Installation
 
-```lua
-use { "nvim-telescope/telescope.nvim", 
-			requires = "nvim-lua/plenary.nvim" }
-```
+   See `plugins.lua`
 
 2. Write the key-mappings of this plugin in `keymappings.lua`
-
-## Language Server Protocol
-
-[neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) - Quickstart configurations for the Neovim LSP client.
-
-1. Installation
-
-```lua
-use { "neovim/nvim-lspconfig" }
-use { "williamboman/nvim-lsp-installer",
-      config = function() require("plugin-config.nvim-lsp-installer") end}
-```
-
-2. Write configuration `nvim-lspconfig.lua` and `nvim-lsp-installer.lua`
-
-3. Write configuration for each language e.g. `lsp.jdtls` and `clangd`
-
-4. Write the key-mappings of this plugin in `keymappings.lua`
-
-## Completion
-
-[hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp) - A completion plugin for Neovim written in Lua. New version of nvim-compe.
-
-1. Installation
-
-```lua
-use { "hrsh7th/nvim-cmp",
-      requires = { 
-        "nvim-lspconfig", 
-        "hrsh7th/cmp-nvim-lsp", -- LSP source for nvim-cmp
-        "hrsh7th/cmp-buffer", -- nvim-cmp source for buffer words
-        "hrsh7th/cmp-path", -- nvim-cmp source for filesystem paths
-        "hrsh7th/cmp-cmdline", -- nvim-cmp source for vim's cmdline
-        -- Snippet
-        "L3MON4D3/LuaSnip", -- Snippet engine for Neovim written in Lua
-        "saadparwaiz1/cmp_luasnip", -- Luasnip completion source
-        -- Better sort completion items
-        "lukas-reineke/cmp-under-comparator",
-      },
-      config = function() require("plugin-config.nvim-cmp") end }
-```
-
-2. Write configuration `nvim-cmp.lua`
-3. Write the key-mappings of this plugin in `keymappings.lua`
-4. Add an additional capabilities supported by nvim-cmp in `nvim-lspconfig.lua`
 
 ## Terminal Integration
 
@@ -227,50 +151,10 @@ use { "hrsh7th/nvim-cmp",
 
 1. Installation
 
-```lua
-use { "akinsho/toggleterm.nvim",
-  		config = function() require("plugin-config.toggleterm") end}
-```
+   See `plugins.lua`
 
 2. Write configuration `toggleterm.lua`
 3. Write the key-mappings of this plugin in `keymappings.lua`
-
-## Debug
-
-[mfussenegger/nvim-dap](https://github.com/mfussenegger/nvim-dap) - Debug Adapter Protocol client implementation for Neovim.
-
-1. Install a debug adapter per language
-
-   The [Debug-Adapter Installation](https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation) wiki
-
-   An easy way to install `lldb-vscode` on Mac is to use `brew`
-
-   ```
-   $ brew install llvm
-   ```
-
-   Then executable file `lldb-vscode` and `lldb-server` are under this path `/usr/local/Cellar/llvm/13.0.1_1/bin`.
-
-2. Installation
-
-```lua
-use { "mfussenegger/nvim-dap",
-      config = function() require("plugin-config.nvim-dap") end}
-use { "theHamsta/nvim-dap-virtual-text",
-      config = function() require("nvim-dap-virtual-text").setup() end}
-use { "rcarriga/nvim-dap-ui", -- UI for dap
-      requires = {"mfussenegger/nvim-dap"},
-      config = function() require("plugin-config.nvim-dap-ui") end}
-```
-
-3. Write configuration `nvim-dap.lua`,`nvim-dap-ui.lua`
-
-4. Write the key-mappings of plugins `nvim-dap` and `nvim-dap-ui`  in `keymappings.lua`
-
-> ❕load_launchjs({path}, {type_to_filetypes})
-> 	 			
->
-> ​				{path}    Path to the `launch.json` file. Defaults to`.vscode/launch.json` relative to the working directory.
 
 ## Custom indent for file type
 
@@ -290,14 +174,12 @@ So I have to customise the indent style separately.
 ## Format
 
 [mhartington/formatter.nvim](https://github.com/mhartington/formatter.nvim) - A format runner for neovim, written in lua.
+
 1. `brew install clang-format` and `brew install stylua`
 
 2. Installation
 
-```lua
-use { "mhartington/formatter.nvim",
-      config = function()  require("plugin-config.formatter") end}
-```
+   See `plugins.lua`
 
 3. Write configuration `formatter.lua`
 
@@ -309,11 +191,71 @@ use { "mhartington/formatter.nvim",
 
 1. Installation
 
-```lua
-use {
-  "folke/which-key.nvim",
-  config = function() require("plugin-config.which-key") end
-}
-```
+   See `plugins.lua`
 
 2. Write configuration `which-key.lua`
+
+## Comment
+
+[numToStr/Comment.nvim](https://github.com/numToStr/Comment.nvim) - Smart and Powerful commenting plugin for neovim.
+
+1. Installation
+
+   See `plugins.lua`
+
+2. Write configuration `comment.lua`
+
+## Language Server Protocol
+
+[neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) - Quickstart configurations for the Neovim LSP client.
+
+1. Installation
+
+   See `plugins.lua`
+
+2. Write configuration `nvim-lspconfig.lua` and `nvim-lsp-installer.lua`
+
+3. Write configuration for each language e.g. `lsp.jdtls` and `clangd`
+
+4. Write the key-mappings of this plugin in `keymappings.lua`
+
+## Completion
+
+[hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp) - A completion plugin for Neovim written in Lua. New version of nvim-compe.
+
+1. Installation
+
+   See `plugins.lua`
+
+2. Write configuration `nvim-cmp.lua`
+3. Write the key-mappings of this plugin in `keymappings.lua`
+4. Add an additional capabilities supported by nvim-cmp in `nvim-lspconfig.lua`
+
+## Debug
+
+[mfussenegger/nvim-dap](https://github.com/mfussenegger/nvim-dap) - Debug Adapter Protocol client implementation for Neovim.
+
+1. Install a debug adapter per language
+
+   The [Debug-Adapter Installation](https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation) wiki
+
+   An easy way to install `lldb-vscode` on Mac is to use `brew`
+
+   ```
+   $ brew install llvm
+   ```
+
+   Then executable file `lldb-vscode` and `lldb-server` are under this path `/usr/local/Cellar/llvm/13.0.1_1/bin`.
+
+2. Installation
+
+   See `plugins.lua`
+
+3. Write configuration `nvim-dap.lua`,`nvim-dap-ui.lua`
+
+4. Write the key-mappings of plugins `nvim-dap` and `nvim-dap-ui`  in `keymappings.lua`
+
+> ❕load_launchjs({path}, {type_to_filetypes})
+> 	 			
+>
+> ​				{path}    Path to the `launch.json` file. Defaults to`.vscode/launch.json` relative to the working directory.

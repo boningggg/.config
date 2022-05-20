@@ -1,7 +1,7 @@
-local ok_packer, packer = pcall(require, "packer")
+local ok, packer = pcall(require, "packer")
 
-if not ok_packer then
-  vim.notify("[ERROR] Don't find the plugin 'packer', please install it.")
+if not ok then
+  vim.notify("[ERROR] Don't find the plugin packer.")
   return
 end
 
@@ -11,20 +11,20 @@ packer.startup({
     -- Packer can manage itself
     use("wbthomason/packer.nvim")
 
-    -- Colorschemes
-    use({
-      "olimorris/onedarkpro.nvim",
-      config = function()
-        require("plugin-config.onedarkpro")
-      end,
-    })
-
     -- Language Highlighting Pro
     use({
       "nvim-treesitter/nvim-treesitter",
       run = ":TSUpdate",
       config = function()
         require("plugin-config.nvim-treesitter")
+      end,
+    })
+
+    -- Colorschemes
+    use({
+      "olimorris/onedarkpro.nvim",
+      config = function()
+        require("plugin-config.onedarkpro")
       end,
     })
 
@@ -69,6 +69,38 @@ packer.startup({
       requires = "nvim-lua/plenary.nvim",
     })
 
+    -- Terminal integration
+    use({
+      "akinsho/toggleterm.nvim",
+      config = function()
+        require("plugin-config.toggleterm")
+      end,
+    })
+
+    -- Format
+    use({
+      "mhartington/formatter.nvim",
+      config = function()
+        require("plugin-config.formatter")
+      end,
+    })
+
+    -- Which Key
+    use({
+      "folke/which-key.nvim",
+      config = function()
+        require("plugin-config.which-key")
+      end,
+    })
+
+    -- Comment
+    use({
+      "numToStr/Comment.nvim",
+      config = function()
+        require("plugin-config.comment")
+      end,
+    })
+
     -- Language Server Protocol
     use({
       "neovim/nvim-lspconfig",
@@ -100,14 +132,6 @@ packer.startup({
       end,
     })
 
-    -- Terminal integration
-    use({
-      "akinsho/toggleterm.nvim",
-      config = function()
-        require("plugin-config.toggleterm")
-      end,
-    })
-
     -- Debug
     use({
       "mfussenegger/nvim-dap",
@@ -126,30 +150,6 @@ packer.startup({
       requires = { "mfussenegger/nvim-dap" },
       config = function()
         require("plugin-config.nvim-dap-ui")
-      end,
-    })
-
-    -- Format
-    use({
-      "mhartington/formatter.nvim",
-      config = function()
-        require("plugin-config.formatter")
-      end,
-    })
-
-    -- Which Key
-    use({
-      "folke/which-key.nvim",
-      config = function()
-        require("plugin-config.which-key")
-      end,
-    })
-
-    -- Comment
-    use({
-      "numToStr/Comment.nvim",
-      config = function()
-        require("plugin-config.comment")
       end,
     })
   end, -- End adding plugins

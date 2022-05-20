@@ -1,7 +1,7 @@
-local ok_lualine, lualine = pcall(require, "lualine")
+local ok, lualine = pcall(require, "lualine")
 
-if not ok_lualine then
-  vim.notify("[ERROR] Don't find the plugin 'lualine', please check 'plugins.lua'.")
+if not ok then
+  vim.notify("[ERROR] Don't find the plugin lualine.")
   return
 end
 

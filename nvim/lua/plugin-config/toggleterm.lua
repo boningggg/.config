@@ -1,7 +1,7 @@
-local ok_toggleterm, toggleterm = pcall(require, "toggleterm")
+local ok, toggleterm = pcall(require, "toggleterm")
 
-if not ok_toggleterm then
-  vim.notify("[ERROR] Don't find the plugin 'toggleterm', please check 'plugins.lua'.")
+if not ok then
+  vim.notify("[ERROR] Don't find the plugin toggleterm.")
   return
 end
 

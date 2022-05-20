@@ -1,4 +1,9 @@
-local onedarkpro = require("onedarkpro")
+local ok, onedarkpro = pcall(require, "onedarkpro")
+
+if not ok then
+  vim.notify("[ERROR] Don't find the plugin onedarkpro.")
+  return
+end
 
 onedarkpro.setup({
   -- This enables the Neovim background to set either onedark or onelight

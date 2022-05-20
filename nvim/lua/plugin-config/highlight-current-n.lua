@@ -1,7 +1,7 @@
-local ok_highlight_current_n, highlight_current_n = pcall(require, "highlight_current_n")
+local ok, highlight_current_n = pcall(require, "highlight_current_n")
 
-if not ok_highlight_current_n then
-  vim.notify("[ERROR] Don't find the plugin 'highlight-current-n', please check 'plugins.lua'.")
+if not ok then
+  vim.notify("[ERROR] Don't find the plugin highlight-current-n.")
   return
 end
 
