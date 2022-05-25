@@ -6,7 +6,6 @@ alias ll='ls -lAF'
 export CLICOLOR=1
 # Prompt Theme - Pure : brew install pure
 autoload -U promptinit; promptinit
-zstyle :prompt:pure:path color 252
 zstyle :prompt:pure:git:branch color green
 zstyle :prompt:pure:prompt:success color green
 # turn on git stash status

@@ -30,30 +30,31 @@ font:
     y: 4 # Make this value half of offset.y to ensure the character in the middle of line.
 
 # onedarkpro.nvim - onedark - from https://github.com/olimorris/onedarkpro.nvim/blob/main/extras/alacritty_onedark.yml
+# onedarkpro.nvim - onelight
 colors:
   primary:
-    background: "#282c34"
-    foreground: "#abb2bf"
+    background: "#fafafa"
+    foreground: "#6a6a6a"
 
   normal:
-    black: "#282c34"
-    red: "#e06c75"
-    green: "#98c379"
-    yellow: "#e5c07b"
-    blue: "#61afef"
-    magenta: "#c678dd"
-    cyan: "#56b6c2"
-    white: "#abb2bf"
-
+    black: "#6a6a6a"
+    red: "#e05661"
+    green: "#1da912"
+    yellow: "#eea825"
+    blue: "#118dc3"
+    magenta: "#9a77cf"
+    cyan: "#56B6C2"
+    white: "#fafafa"
+  
   bright:
-    black: "#3f3f3f"
-    red: "#e06c75"
-    green: "#98c379"
-    yellow: "#e5c07b"
-    blue: "#61afef"
-    magenta: "#c678dd"
-    cyan: "#56b6c2"
-    white: "#bfc5ce"
+    black: "#5f5f5f"
+    red: "#e05661"
+    green: "#1da912"
+    yellow: "#eea825"
+    blue: "#118dc3"
+    magenta: "#9a77cf"
+    cyan: "#56B6C2"
+    white: "#fcfcfc"
 
   cursor:
     text: CellBackground
@@ -61,4 +62,4 @@ colors:
 
   selection:
     text: CellForeground
-    background: "#3e4452"
+    background: "#bfceff" # syntax-selection-color

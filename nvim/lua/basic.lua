@@ -23,3 +23,4 @@ vim.o.timeoutlen = 500
 vim.o.list = true
 vim.o.listchars = "tab:→ ,eol:↲,nbsp:␣,trail:•,extends:❯,precedes:❮"
 vim.o.showbreak = "↪"
+vim.o.background = "light"
