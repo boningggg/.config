@@ -1,3 +1,10 @@
+local ok, formatter = pcall(require, "formatter")
+
+if not ok then
+  vim.notify("[ERROR] Don't find the plugin formatter.")
+  return
+end
+
 local cpp_style = {
   function()
     return {
@@ -47,6 +54,14 @@ require("formatter").setup({
             "--config-path " .. vim.fn.getenv("HOME") .. "/.config/nvim/lua/plugin-config/stylua.toml",
             "-",
           },
+          stdin = true,
+        }
+      end,
+    },
+    rust = {
+      function()
+        return {
+          exe = "rustfmt",
           stdin = true,
         }
       end,

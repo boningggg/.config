@@ -2,6 +2,7 @@
 local servers = {
   clangd = require("lsp.clangd"), -- for C
   jdtls = require("lsp.jdtls"), -- for Java
+  rust_analyzer = require("lsp.rust_analyzer"), -- for rust
 }
 
 for name, opts in pairs(servers) do
