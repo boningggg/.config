@@ -1,1 +1,2 @@
 uname -s
+echo $SHELL
